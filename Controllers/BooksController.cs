@@ -21,13 +21,9 @@ namespace BookWalker_React.Controllers
             return bookdao.GetAllBooks();
         }
 
-        //public string Get(int flag) {
-
-          //  return JsonConvert.SerializeObject(bookdao.GetAllBooks());
-       // }
-
         // GET: api/Books/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{isbn}", Name = "Get")]
+        //[Route("api/[controller]/search")]
         public Books Get(string isbn)
         {
             return bookdao.GetSpecificBook(isbn);

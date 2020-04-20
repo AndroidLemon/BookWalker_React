@@ -20,14 +20,14 @@ export class Home extends Component {
             ? <p><em>Loading...</em></p>
             : Home.renderBookScroller(this.state.books);
 
-        return (
-            <div>
-                <h1>Wecome to Bookwalker Cafe!</h1>
-                <p>Immerse Yourself in a World of Words.</p>
-                <p> Customers are welcome to borrow books from the library. We use an honor system here, so please return them when you're finished so that others may read! </p>
-                {contents}
-            </div>
-        );
+    return (
+      <div>
+        <h1>Wecome to Bookwalker Cafe!</h1>
+        <p>Immerse Yourself in a World of Words.:</p>
+           {contents}
+        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
+      </div>
+    );
     }
 
     async populateBookData() {
@@ -37,8 +37,9 @@ export class Home extends Component {
     }
 
     static renderBookScroller(books) {
-        return (<ImageScroller>
-            {books.map(books => <img src={books.imageUrlL} />)}
-        </ImageScroller>)
+
+       return( <ImageScroller>
+            {books.map(books => <img src={books.imageUrlS} />) }
+            </ImageScroller>)
     }
 }

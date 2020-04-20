@@ -3,21 +3,23 @@ import ReactDom from 'react-dom'
 
 class Bookbox extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = { book: this.bookElement, loading: true };
+    }
 
-        state = this.bookElement
+    componentDidMount() {
+        this.populateBookData();
     }
 
     bookElement = {
         isbn: "",
         title: "",
         author: "",
-        year_publisehd: 0,
-        image_url_s: "",
-        image_url_m: "",
-        image_url_l: "";
-
+        yearOfPublication: 0,
+        imageUrlS: "",
+        imageUrlM: "",
+        imageUrlL: ""
     };
 
     render() {
@@ -29,5 +31,11 @@ class Bookbox extends React.Component {
                 </div>
             </div>
             );
+    }
+
+    async populateBookData() {
+        const response = await fetch('https://localhost:44356/api/Books');
+        const data = await response.json();
+        this.setState({ books: data, loading: false });
     }
 }

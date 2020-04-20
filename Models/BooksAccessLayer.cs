@@ -20,6 +20,21 @@ namespace BookWalker_React.Models
         {
 
             var book = (from b in booksDB.Books where b.Isbn == isbn select b).FirstOrDefault();
+
+            if (book == null ) 
+            {
+                book = new Books();
+                book.Isbn = "Not Available";
+                book.Title = "Not Available";
+                book.Author = "Not Available";
+                book.Publisher = "Not Available";
+                book.YearOfPublication = 0;
+                book.ImageUrlS = "Not Available";
+                book.ImageUrlM = "Not Available";
+                book.ImageUrlL = "Not Available";
+                return book;
+            }
+            
             return book;
         }
 
