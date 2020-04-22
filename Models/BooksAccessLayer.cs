@@ -13,13 +13,15 @@ namespace BookWalker_React.Models
         public IEnumerable<Books> GetAllBooks()
         {
 
-            return booksDB.Books.ToList();
+            List<Books> b = booksDB.Books.ToList();
+            b.Sort();
+            return b;
         }
 
         public Books GetSpecificBook(string isbn)
         {
 
-            var book = (from b in booksDB.Books where b.Isbn == isbn select b).FirstOrDefault();
+            var book = (from b in booksDB.Books.ToList() where b.Isbn == isbn select b).FirstOrDefault();
 
             if (book == null ) 
             {

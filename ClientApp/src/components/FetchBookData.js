@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 export class FetchBookData extends Component {
     static displayName = FetchBookData.name;
 
@@ -34,6 +35,7 @@ export class FetchBookData extends Component {
                             <td>{books.yearOfPublication}</td>
                             <td>{books.publisher}</td>
                             <td> <img src={books.imageUrlS} /> </td>
+                            <td> <a href={"/book-details/" + books.isbn} >Details</a> </td>
                         </tr>
                     )}
                 </tbody>
