@@ -34,6 +34,7 @@ namespace BookWalker_React.Models
                 book.ImageUrlS = "Not Available";
                 book.ImageUrlM = "Not Available";
                 book.ImageUrlL = "Not Available";
+                book.BookQuantity = 0;
                 return book;
             }
             
@@ -63,6 +64,37 @@ namespace BookWalker_React.Models
 
                 throw new Exception("Unknown exception occured: " + e.Message);
             }
+        }
+
+        public int UpdateBook(string isbn, int numBooks) {
+
+            try
+            {
+                var result = booksDB.Books.SingleOrDefault(b => b.Isbn == isbn);
+                if (result != null)
+                {
+                    result.BookQuantity += numBooks;
+                    booksDB.SaveChanges();
+                    return result.BookQuantity;
+                }
+                else
+                    return -1; //Book does not exist
+
+            }
+            catch (Npgsql.PostgresException e)
+            {
+                throw new Exception("Exception thrown from PSQL: " + e.Message + ". Please correct this and try again.");
+            }
+            catch (Npgsql.NpgsqlException e)
+            {
+                throw new Exception("There's an issue with accessing the server. Message: " + e.Message);
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception("Unknown exception occured: " + e.Message);
+            }
+
         }
 
         public int DeleteBook(string isbn)

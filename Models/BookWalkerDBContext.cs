@@ -70,6 +70,8 @@ namespace BookWalker_React.Models
                     .HasDefaultValueSql("NULL::character varying");
 
                 entity.Property(e => e.YearOfPublication).HasColumnName("year_of_publication");
+
+                entity.Property(e => e.BookQuantity).HasColumnName("bookQuantity");
             });
 
             OnModelCreatingPartial(modelBuilder);

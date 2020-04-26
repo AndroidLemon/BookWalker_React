@@ -38,8 +38,9 @@ namespace BookWalker_React.Controllers
 
         // PUT: api/Books/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(string id, [FromBody] int value)
         {
+            bookdao.UpdateBook(id , value);
         }
 
         // DELETE: api/ApiWithActions/5

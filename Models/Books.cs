@@ -13,6 +13,7 @@ namespace BookWalker_React.Models
         public string ImageUrlS { get; set; }
         public string ImageUrlM { get; set; }
         public string ImageUrlL { get; set; }
+        public int BookQuantity { get; set; }
 
         public int CompareTo(object obj)
         {

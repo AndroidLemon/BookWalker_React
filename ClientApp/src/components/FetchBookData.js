@@ -23,7 +23,9 @@ export class FetchBookData extends Component {
                         <th>Author</th>
                         <th>Publication Year</th>
                         <th>Publisher</th>
+                        <th>In Stock</th>
                         <th>Thumbnail</th>
+                        <th>Link To Book</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +36,7 @@ export class FetchBookData extends Component {
                             <td>{books.author}</td>
                             <td>{books.yearOfPublication}</td>
                             <td>{books.publisher}</td>
+                            <td>{books.bookQuantity}</td>
                             <td> <img src={books.imageUrlS} /> </td>
                             <td> <a href={"/book-details/" + books.isbn} >Details</a> </td>
                         </tr>

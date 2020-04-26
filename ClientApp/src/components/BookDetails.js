@@ -24,19 +24,20 @@ export class BookDetails extends Component {
 
     static renderBookDetails(books) {
         return (
-            <div>
+            <div class="row align-spaced">
                 {
-                    <div>
+                    <div class="column small-6">
                         <img src={books.imageUrlL} styles="float:left" />
                     </div>
                 }
                 {
-                    <div>
+                    <div class="colimn small-6">
                         <p>ISBN: {books.isbn}</p>
                         <p>Title: {books.title}</p>
                         <p>Author: {books.author}</p>
                         <p>Year Published: {books.yearOfPublication}</p>
                         <p>Published By: {books.publisher}</p>
+                        <p>Quantity In Stock: {books.bookQuantity}</p>
                     </div>
                 }
             </div>
