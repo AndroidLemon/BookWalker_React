@@ -8,15 +8,22 @@ export class BookDetails extends Component {
     constructor(props) {
         super(props);
         this.state = { books: Object, loading: true };
+
+        // Bind handleButtonClick
+        // this.handleButtonClick = this.handleButtonClick.bind(this);
         
     }
+
+    // handleButtonClick(event){
+    //     alert("Button was clicked!")
+    // }
 
     componentDidMount() {
         this.populateBookData();
     }
 
     async populateBookData(isbn) {
-       const bookURL = 'https://localhost:44356/api/Books/' + window.location.pathname.split("/").pop();
+       const bookURL = '/api/Books/' + window.location.pathname.split("/").pop();
         const response = await fetch(bookURL);
         const data = await response.json();
         this.setState({ books: data, loading: false });
@@ -31,15 +38,18 @@ export class BookDetails extends Component {
                     </div>
                 }
                 {
-                    <div class="colimn small-6">
-                        <p>ISBN: {books.isbn}</p>
-                        <p>Title: {books.title}</p>
-                        <p>Author: {books.author}</p>
-                        <p>Year Published: {books.yearOfPublication}</p>
-                        <p>Published By: {books.publisher}</p>
-                        <p>Quantity In Stock: {books.bookQuantity}</p>
+                    <div class="column small-6 align-left">
+                        <div class="card-divider">
+                            <strong>{books.title}</strong>
+                        </div>
+                            <p>ISBN: {books.isbn}</p>
+                            <p>Author: {books.author}</p>
+                            <p>Year Published: {books.yearOfPublication}</p>
+                            <p>Published By: {books.publisher}</p>
+                            <p>Quantity In Stock: {books.bookQuantity}</p>
                     </div>
                 }
+                {/* <button onClick={handleButtonClick}>Checkout</button> */}
             </div>
         );
     }

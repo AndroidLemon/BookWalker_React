@@ -13,3 +13,6 @@ code {
   border-color: #1861ac;
 }
 
+input {
+    margin-bottom: 10px;
+}
