@@ -1,5 +1,19 @@
-﻿.container {
+﻿.card {
+    text-align: center;
+}
 
+.button-alert {
+    font-size: 2rem;
+}
+
+form{
+    max-width: 35rem;
+    align-content: center;
+}
+
+.form{
+    background: #DCDCDC;
+    align-content: center;
 }
 
 .left-element {
@@ -9,6 +23,8 @@
     left: 0;
 }
 
+.link:hover { color: tomato }
+
 .right-element {
     background: red;
     display: inline-block;
@@ -16,5 +32,13 @@
     right: 0;
 }
 
-.home {
+input {
+    width: 10rem;
+}
+
+.title{
+    text-align: center;
+    background: #DCDCDC;
+    padding: 1em;
+    font-family: "Optima";
 }

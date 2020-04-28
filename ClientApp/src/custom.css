@@ -16,3 +16,12 @@ code {
 input {
     margin-bottom: 10px;
 }
+
+circleGradient: {
+    backgroundColor: "white"; borderRadius: 5
+}
+
+,
+visit: {
+    margin: 4; paddingHorizontal: 6; textAlign: "center"; backgroundColor: "white"; color: '#008f68'; fontSize: 12;
+}

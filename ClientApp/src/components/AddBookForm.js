@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { Alert } from 'reactstrap';
+import './container.css';
 
 export class AddBookForm extends Component {
 
@@ -71,84 +72,83 @@ export class AddBookForm extends Component {
     renderBookForm() {
 
         return (
-            <form onSubmit={this.handleSubmit} >
-                <label>
-                    ISBN:
-                <input id="isbn"
-                        name="isbn"
-                        type="text"
-                        onChange={this.handleChange}
-                        required />
-                </label><br></br>
-                <label>
-                    Title:
-                <input id="title"
-                        name="title"
-                        type="text"
-                        onChange={this.handleChange}
-                        required />
-                </label><br></br>
-                <label>
-                    Author:
-                <input id="author"
-                        name="author"
-                        type="text"
-                        onChange={this.handleChange}
-                        required />
-                </label><br></br>
-                <label>
-                    Publication Year:
-                <input id="yearOfPublication"
-                        name="yearOfPublication"
-                        type="number"
-                        min="0"
-                        onChange={this.handleChange}
-                        required />
-                </label><br></br>
-                <label>
-                    Publisher:
-                <input id="publisher"
-                        name="publisher"
-                        type="text"
-                        onChange={this.handleChange}
-                        required />
-                </label><br></br>
-                <label>
-                    Author:
-                <input id="imageUrlS"
-                        name="imageUrlS"
-                        type="text"
-                        onChange={this.handleChange}
-                        defaultValue="https://i.pinimg.com/originals/49/80/d7/4980d751d522ce2eb66e28c45ced8ed0.jpg"
-                        required />
-                </label><br></br>
-                <label>
-                    Author:
-                <input id="imageUrlM"
-                        name="imageUrlM"
-                        type="text"
-                        onChange={this.handleChange}
-                        defaultValue="https://i.pinimg.com/originals/49/80/d7/4980d751d522ce2eb66e28c45ced8ed0.jpg"
-                        required />
-                </label><br></br>
-                <label>
-                    Author:
-                <input id="imageUrlL"
-                        name="imageUrlL"
-                        type="text"
-                        defaultValue="https://i.pinimg.com/originals/49/80/d7/4980d751d522ce2eb66e28c45ced8ed0.jpg"
-                        required />
-                </label><br></br>
-                <label>
-                    Number Of Copies:
-                <input id="booQuantity"
-                        name="bookQuantity"
-                        type="number"
-                        min="0"
-                        onChange={this.handleChange}
-                        required />
-                </label><br></br><br></br>
-                <button type="submit">Submit Book Data</button>
+            <form onSubmit={this.handleSubmit}>
+                <div class="grid-x grid-padding-x">
+                    <label>ISBN:</label>
+                    <input id="isbn"
+                            name="isbn"
+                            type="text"
+                            placeholder="Enter ISBN"
+                            onChange={this.handleChange}
+                            required />
+                    <br></br>
+                    <label>Title:</label>
+                    <input id="title"
+                            name="title"
+                            type="text"
+                            placeholder="What is the title?"
+                            onChange={this.handleChange}
+                            required />
+                    <br></br>
+                    <label>Author:</label>
+                    <input id="author"
+                            name="author"
+                            type="text"
+                            placeholder="Who is the Author of this book?"
+                            onChange={this.handleChange}
+                            required />
+                    <br></br>
+                    <label>Publication Year:</label>
+                    <input id="yearOfPublication"
+                            name="yearOfPublication"
+                            type="number"
+                            min="0"
+                            placeholder="What year was the book published?"
+                            onChange={this.handleChange}
+                            required />
+                    <br></br>
+                    <label>Publisher:</label>
+                    <input id="publisher"
+                            name="publisher"
+                            type="text"
+                            placeholder="Who is the publisher?"
+                            onChange={this.handleChange}
+                            required />
+                    <br></br>
+                    <label>Link To Image (small/thumbnail):</label>
+                    <input id="imageUrlS"
+                            name="imageUrlS"
+                            type="text"
+                            onChange={this.handleChange}
+                            defaultValue="https://i.pinimg.com/originals/49/80/d7/4980d751d522ce2eb66e28c45ced8ed0.jpg"
+                            required />
+                    <br></br>
+                    <label>Link To Image (medium):</label>
+                    <input id="imageUrlM"
+                            name="imageUrlM"
+                            type="text"
+                            onChange={this.handleChange}
+                            defaultValue="https://i.pinimg.com/originals/49/80/d7/4980d751d522ce2eb66e28c45ced8ed0.jpg"
+                            required />
+                    <br></br>
+                    <label>Link To Image (large):</label>
+                    <input id="imageUrlL"
+                            name="imageUrlL"
+                            type="text"
+                            defaultValue="https://i.pinimg.com/originals/49/80/d7/4980d751d522ce2eb66e28c45ced8ed0.jpg"
+                            required />
+                    <br></br>
+                    <label>Number Of Copies:</label>
+                    <input id="booQuantity"
+                            name="bookQuantity"
+                            type="number"
+                            min="0"
+                            placeholder="How many copies available?"
+                            onChange={this.handleChange}
+                            required />
+                    <br></br><br></br>
+                    <button type="button" class="success button"  type="submit">Submit Book Data</button>
+                </div>
             </form>
         );
     }
